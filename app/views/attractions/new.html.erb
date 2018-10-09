@@ -1,5 +1,6 @@
 <div class="container">
-  <% display_errors(@attraction).each do |error| %>
+  <% if @attraction.errors.any? %>
+    <% display_errors(@attraction).each do |error| %>
     <li><%= error %></li>
   <% end %>
 
