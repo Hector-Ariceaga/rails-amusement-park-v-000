@@ -1,4 +1,7 @@
 <div class="center">
+
+  <div class="notice"> <%= flash[:message] %> </div>
+
   <div class="info">
     <p><b>Name:</b> <%= @attraction.name %></p>
     <p><b>Total Number of Users:</b> <%= @attraction.users.count %></p>
