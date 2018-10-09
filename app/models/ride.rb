@@ -35,7 +35,7 @@ class Ride < ActiveRecord::Base
   end
 
   def meets_ride_requirements
-    "Thanks for riding #{self.attraction.name}!"
+    "Thanks for riding the #{self.attraction.name}!"
   end
 
 end
