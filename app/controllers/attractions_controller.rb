@@ -1,5 +1,6 @@
 class AttractionsController < ApplicationController
   before_action :find_attraction, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?
 
     def index
         @attractions = Attraction.all
