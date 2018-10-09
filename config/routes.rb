@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   post '/signin', to: 'sessions#create'
   delete '/signout', to: 'sessions#destroy'
   post '/rides/create', to: 'rides#create'
-  delete '/attraction/destroy', to: 'attractions#destroy'
   resources :users, only: [:new, :create, :show]
   resources :attractions
 
