@@ -38,7 +38,4 @@ class Ride < ActiveRecord::Base
     "Thank you for riding #{self.attraction.name}!"
   end
 
-  def set_message(message)
-    flash[:message] = message
-  end
 end
