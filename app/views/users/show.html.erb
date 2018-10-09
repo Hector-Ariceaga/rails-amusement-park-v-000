@@ -1,4 +1,7 @@
 <div class="center">
+  <% if flash[:message] %>
+    <%= flash[:message] %>
+  <% end %>
   <div class="info">
     <p><strong><%= admin?(@user) %><strong><p>
     <p><b>Name:</b> <%= @user.name %></p>
