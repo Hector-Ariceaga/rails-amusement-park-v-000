@@ -1,6 +1,6 @@
 class AttractionsController < ApplicationController
   before_action :find_attraction, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in?
+  before_action :require_log_in
 
     def index
         @attractions = Attraction.all
@@ -51,4 +51,6 @@ class AttractionsController < ApplicationController
     def attraction_params
       params.require(:attraction).permit(:name, :min_height, :nausea_rating, :happiness_rating, :tickets)
     end
+
+
 end
