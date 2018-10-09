@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :rides
   has_many :attractions
   has_many :attractions, through: :rides
-  validates :name, :nausea, :height, :happiness, presence: true
+  validates :name, :nausea, :height, :happiness, :password, presence: true
 
   def mood
     if self.nausea && self.happiness
