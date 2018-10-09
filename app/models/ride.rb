@@ -13,10 +13,10 @@ class Ride < ActiveRecord::Base
     elsif enough_tickets? && !tall_enough?
       "Sorry. You are not tall enough to ride the #{self.attraction.name}."
     else
-      . You are not tall enough to ride the #{self.attraction.name}."
+      not_enough_tickets +
     end
   end
-  
+
   def enough_tickets?
     self.attraction.tickets < user.tickets
   end
@@ -27,5 +27,9 @@ class Ride < ActiveRecord::Base
 
   def not_enough_tickets
     "Sorry. You do not have enough tickets to ride the #{self.attraction.name}."
+  end
+
+  def not_tall_enough
+    "You are not tall enough to ride the #{self.attraction.name}."
   end
 end
