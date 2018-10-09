@@ -1,6 +1,6 @@
 <div class="container">
   <% if @attraction.errors.any? %>
-    <%= @attraction.errors.full_messages.each do |message| %>
+    <% @attraction.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   <% end %>
