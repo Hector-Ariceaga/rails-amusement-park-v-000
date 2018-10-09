@@ -1,6 +1,6 @@
 <div class="container">
-  <%= if display_errors(@attraction) %>
-  <% end %>
+  <%= display_errors(@attraction) unless !display_errors(@attraction)%>
+
 
   <h1>New Attraction</h1>
   <%= render 'form' %>
