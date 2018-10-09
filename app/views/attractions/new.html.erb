@@ -1,5 +1,7 @@
 <div class="container">
-  <%= display_errors(@attraction) %>
+  <% display_errors(@attraction).each do |error| %>
+    <li><%= error %></li>
+  <% end %>
 
   <h1>New Attraction</h1>
   <%= render 'form' %>
