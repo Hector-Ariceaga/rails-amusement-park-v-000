@@ -1,4 +1,10 @@
 <div class="container">
   <h1>Edit Attraction</h1>
-  <%= render 'attractions/form' %>
+  <h1>New Attraction</h1>
+  <%= form_for @attraction do |f| %>
+    <%= render partial: 'attractions/form', locals: {f: f} %>
+    <div class: "btn btn-primary">
+      <%= f.submit 'Edit Attraction', class: "btn btn-primary" %>
+    </div>
+  <% end %>
 </div>
