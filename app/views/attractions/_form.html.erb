@@ -1,4 +1,11 @@
 <%= form_for @attraction do |f| %>
+
+<% if @attraction.errors.any? %>
+  <% @attraction.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  
+<% end %>
   <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name, class: "form-control" %>
