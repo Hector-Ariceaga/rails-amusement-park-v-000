@@ -1,5 +1,9 @@
 <div class="container">
-  <%= display_errors(@attraction) unless !display_errors(@attraction)%>
+  <% if @attraction.errors.any? %>
+    <%= @attraction.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
 
 
   <h1>New Attraction</h1>
