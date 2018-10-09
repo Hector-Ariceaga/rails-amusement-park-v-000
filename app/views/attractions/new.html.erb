@@ -1,4 +1,10 @@
 <div class="container">
   <h1>New Attraction</h1>
-  <%= render 'attractions/form' %>
+  <%= form_for @attraction do |f| %>
+    <%= render 'attractions/form' %>
+    <div class: "btn btn-primary">
+      <%= f.submit 'Create Attraction', class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
 </div>
