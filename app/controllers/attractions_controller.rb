@@ -29,7 +29,8 @@ class AttractionsController < ApplicationController
     def update
       if @attraction.update(attraction_params)
         flash[:message] = "Succesfully updated attraction!"
-      redirect_to attraction_path(@attraction)
+        redirect_to attraction_path(@attraction)
+      end
     end
 
     def destroy
