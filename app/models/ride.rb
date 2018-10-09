@@ -14,7 +14,7 @@ class Ride < ActiveRecord::Base
     elsif enough_tickets? && !tall_enough?
       not_tall_enough
     else
-      not_enough_tickets + not_tall_enough
+      "Sorry, #{not_enough_tickets + not_tall_enough}"
     end
   end
 
