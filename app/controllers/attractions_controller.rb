@@ -1,10 +1,10 @@
 class AttractionsController < ApplicationController
+  before_action :find_attraction, only: [:show, :edit, :update, :destroy]
     def index
         @attractions = Attraction.all
     end
 
     def show
-        @attraction = Attraction.find_by(id: params[:id])
     end
 
     def new
@@ -15,6 +15,7 @@ class AttractionsController < ApplicationController
       @attraction = Attraction.new(attraction_params)
 
       if @attraction.save
+        flash[:message] = "Succesfully created attraction!"
         redirect_to attraction_path(@attraction)
       else
         render 'new'
@@ -22,11 +23,25 @@ class AttractionsController < ApplicationController
     end
 
     def edit
-      @attraction = Attraction.find_by(id: params[:id])
-      @attraction.update(attraction_params)
+    end
+
+    def update
+      if @attraction.update(attraction_params)
+        flash[:message] = "Succesfully updated attraction!"
       redirect_to attraction_path(@attraction)
     end
+
+    def destroy
+      @attaction.destroy
+      flash[:message] = "Succesfully destroyed attraction!"
+      redirect_to attractions_path
+    end
+
     private
+
+    def find_attraction
+      @attraction = Attraction.find_by(id: params[:id])
+    end
 
     def attraction_params
       params.require(:attraction).permit(:name, :min_height, :nausea_rating, :happiness_rating, :tickets)
