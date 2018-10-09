@@ -30,6 +30,8 @@ class AttractionsController < ApplicationController
       if @attraction.update(attraction_params)
         flash[:message] = "Succesfully updated attraction!"
         redirect_to attraction_path(@attraction)
+      else
+        render 'edit'
       end
     end
 
