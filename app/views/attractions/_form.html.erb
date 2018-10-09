@@ -1,4 +1,4 @@
-<%= form_for @attraction do |f| %>
+
   <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name, class: "form-control" %>
@@ -23,8 +23,3 @@
     <%= f.label :tickets, 'How many tickets does it cost?' %><br>
     <%= f.number_field :tickets, class: "form-control" %>
   </div>
-
-  <div class: "btn btn-primary">
-    <%= f.submit 'Create Attraction', class: "btn btn-primary" %>
-  </div>
-<% end %>
