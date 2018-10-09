@@ -36,7 +36,7 @@ class AttractionsController < ApplicationController
     end
 
     def destroy
-      @attaction.destroy
+      @attraction.destroy
       flash[:message] = "Succesfully destroyed attraction!"
       redirect_to attractions_path
     end
