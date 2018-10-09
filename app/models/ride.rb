@@ -8,7 +8,7 @@ class Ride < ActiveRecord::Base
       self.user.nausea += self.attraction.nausea_rating
       self.user.happiness += self.attraction.happiness_rating
       self.user.save
-      meets_ride_requirements
+      set_message(meets_ride_requirements)
     elsif !enough_tickets? && tall_enough?
       not_enough_tickets
     elsif enough_tickets? && !tall_enough?
